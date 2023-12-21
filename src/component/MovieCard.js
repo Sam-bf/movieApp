@@ -1,5 +1,6 @@
 import ReactStars from "react-stars";
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const MovieCard=({el})=>{
     return (
@@ -27,7 +28,7 @@ const MovieCard=({el})=>{
   
         <div className="categories">
           <a href="#" className="active">
-            Description
+          <Link to = "/Profile">Description </Link> 
           </a>
           <a href="#">Episodes</a>
           <a href="#">Reviews</a>
@@ -39,7 +40,7 @@ const MovieCard=({el})=>{
             {" "}
             <ion-icon className="icon" name="play"></ion-icon>{" "}
           </span>
-          Play
+          Play 
         </div>
       </div>
     );

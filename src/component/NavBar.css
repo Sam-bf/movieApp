@@ -1,0 +1,11 @@
+.navBar { 
+
+font-style: italic;
+}
+.navList {
+    display: flex;
+   
+    
+    
+    list-style: none;
+}

@@ -5,6 +5,13 @@ import { Moviedata } from './Moviedata';
 import MovieList from './component/MovieList';
 import AddMovie from './component/AddMovie';
 import FilterMovie from './component/FilterMovie';
+import NavBar from './component/NavBar'
+import { Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Trailer from './component/Trailer';
+import Top10 from './component/Top10';
+import Profile from './component/Profile';
+
 
 function App() {
   const [Movies,setMovies]=useState(Moviedata)
@@ -16,11 +23,33 @@ function App() {
 }
   return (
     <div className="wrapper">
+      
+      
+         
+     
+      <div className='filtAdd'>
+      
+      <Routes>
+        <Route path='/' element={
+          <>
+          <NavBar/>
+     
+        <Home/>
+        <MovieList Movies={Movies} input={input}/>
+        <AddMovie addNewMovie={addNewMovie}/>
       <FilterMovie setInput={setInput}/>
-      <MovieList Movies={Movies} input={input}/>
-      <AddMovie addNewMovie={addNewMovie}/>
+      
+        </>
+        }/>
+        <Route path='/Trailer' element={<Trailer/>}/>
+        <Route path='/Top10' element={<Top10/>}/>
+        <Route path='/Profile' element={<Profile/>}/>
+      </Routes>
+      
+      
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
